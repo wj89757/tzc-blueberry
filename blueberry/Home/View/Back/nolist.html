@@ -1,0 +1,79 @@
+
+<div class="container" style="min-height: 500px;padding:0;margin:0;">
+    <div class="row">
+		<include file="Public/backside" />
+		<div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+			 <div class="main">
+            	<div class="main-h" >
+                	<ul class="breadcrumb">
+                  		<li>
+                        <a href={:U('Back/index')}>订单管理首页</a> <span class="divider"></span>
+                      </li>
+                      <li>
+                    		<a href="#">未付款</a> <span class="divider"></span>
+                  		</li>
+                  		<li class="active">
+                    		手机预约登记信息
+                  		</li>
+                	</ul>
+                  <a href="#" class="btn btn-default active">手机预约的顾客</a>
+                  <form class="form-horizontal" method="post" action={:U('Back/twoalter')}>
+                  <div class="input-group" style="width:40%;float: right;margin-top:-33px;">
+                    <input id="telphone" type="text" placeholder="请输入来客的电话号码" class="form-control" name="yourtel" />
+                    <span class="input-group-btn">
+                      <input class="btn btn-default" type="submit" value="查找">
+                   </span>
+                  </div>
+                  </form><br>
+                      <table class="table table-hover" style="margin: 0px;">
+                       <caption>预约信息总览(指的是通过手机预约的)：总人数<{$sumtotal}>  成人总数<{$sumadult}>   儿童总数<{$sumchild}></caption>
+                       <thead>
+                          <tr>
+                             <th>ID</th>
+                             <th>电话号码</th>
+                             <th>预约姓名</th>
+                             <th>预约时间</th>
+                             <th>成人人数</th>
+                             <th>儿童人数</th>
+                             <th>预约提交时间</th>
+                             
+                          </tr>
+                       </thead>
+                       <tbody>
+                        <foreach item="obj" name="list">
+                          <tr>
+                             <td>{$obj.index}</td>
+                             <td>{$obj.tel}</td>
+                             <td>{$obj.name}</td>
+                             <td>{$obj.aptime}</td>
+                             <td>{$obj.totalnum}</td>
+                             <td>{$obj.childnum}</td>
+                             <td>{$obj.uptime}</td>
+                          </tr>
+                         </foreach> 
+                       </tbody>
+                    </table>
+                    <li class="list-group-item"><a href={:U('Back/expnotel')}>
+                        导出<手机预约未付款表>生成EXCEL
+                        </a></li>
+                  <div class="pagination">
+                    {$page}
+                  </div>
+                <br><br><br><br><br><br>
+              </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script type="text/javascript">
+   var yes = document.getElementById('yes');
+        var fix = document.getElementById('fix');
+        var del = document.getElementById('del');
+        var no = document.getElementById('no');
+        var noadd = document.getElementById('noadd');
+        var nofind = document.getElementById('nofind');
+        var nodel = document.getElementById('delno');
+        var list = document.getElementById('list');fix.style.display = 'block';
+                del.style.display = 'block';
+                list.style.display = 'block';
+</script>

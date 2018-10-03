@@ -1,0 +1,15 @@
+.activity h3{
+	color:#673985;
+	text-align: center;
+	margin-top: 30px;
+}
+.activity h5{
+	color:#999;
+	text-align: center;
+}
+.activity p{
+	color:#666;
+}
+.activity .h-top{
+	margin-top: 15px;
+}

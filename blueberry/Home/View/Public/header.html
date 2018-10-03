@@ -1,0 +1,43 @@
+	<!-- 前台导航栏页面 -->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<!-- 适应手机界面设计 -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- 导航栏左侧 -->
+				<a class="navbar-brand" href={:U('Back/index')}>“贪吃蓝莓君”订单管理</a>
+			</div>
+
+			<!-- 导航栏所在处 -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- 用户值是否为空 -->
+					<empty name="username">
+						<li>
+							<a href={:U('Index/login')}>尚未登陆，请登陆?
+							</a>
+						</li>
+					<else /> 
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="myname">
+								{$username}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								
+								
+								<li>
+									<a href={:U('Log/logout')}>注销</a>
+								</li>
+							</ul>
+						</li>
+					</empty> 
+				</ul>
+			</div>
+		</nav>
+		<!-- 导航栏结束 -->

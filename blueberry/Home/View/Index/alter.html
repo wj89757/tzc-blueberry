@@ -1,0 +1,81 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 分别为：屏幕宽度和设备一直，初始缩放比例，最大缩放比例和禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>贪吃蓝莓君-修改预约信息</title>
+	<load href="__PUBLIC__/css/bootstrap.min.css" />
+	<load rel="stylesheet" href="__PUBLIC__/css/style.css" />
+	<load rel="stylesheet" href="__PUBLIC__/css/bootstrap-datetimepicker.css" />
+</head>
+<body>
+	<!-- 水平排列 标签和文本框一行 -->
+
+	<div class="container BlueberryForm">
+		<div class="row">
+			<div class="col-md-12">
+				<form class="form-horizontal" method="post" action={:U('Index/fix')}>
+					<div class="container">
+						<div class="row">
+							<div>
+								<h3><修改预约信息></h3>
+								<h5>请谨慎选择预约时间</h5>
+							</div>
+							<input style="display:none;" value={$findid} name="id"/> 
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-user">
+									</span>
+								</div>
+								<input type="text" id="username" placeholder="请输入您的姓名" class="form-control" name="yourname" msg="姓名" value="{$findname}">
+							</div>
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-earphone">
+									</span>
+								</div>
+								<input id="telphone" type="text" placeholder="请输入您的联系方式" class="form-control" name="yourtel" msg="联系方式" value="{$findtel}"/>
+							</div>
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar">
+									</span>
+								</div>
+								<input type="text" name="youraptime" class="form-control" value="{$findtime}" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii" readonly>
+							</div>
+							<div class="input-group">
+						      <div class="input-group-addon">
+									<span class="glyphicon glyphicon-stats">
+									</span>
+								</div>
+								<input id="totalpeople" type="text" name="yourtotal" placeholder="请输入出行的人数（填数字即可）" class="form-control" msg="出行人数" value="{$findtotal}">
+						   </div>
+						   <div class="input-group">
+						      <div class="input-group-addon">
+									<span class="glyphicon glyphicon-leaf">
+									</span>
+								</div>
+								<input id="childnum" type="text" name="yourchild" placeholder="请输入携带的8岁以下小孩人数（填数字即可）" class="form-control" value="{$findchild}" msg="儿童人数(可以是0)">
+						   </div>
+						   <input type="submit" class="btn btn-primary btn-lg btn-block btn-top-px" value="提交修改信息"/>
+						   <a class="btn btn-primary btn-lg btn-block" href={:U('Index/index')}>返回预约首页</a>
+						</div>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+	<load href="__PUBLIC__/js/custom.js" />
+	<load href="__PUBLIC__/js/jquery.min.js" />
+	<load href="__PUBLIC__/js/bootstrap.min.js" />
+	<load href="__PUBLIC__/js/bootstrap-datetimepicker.min.js" />
+	<load href="__PUBLIC__/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8" />
+	<script type="text/javascript">
+		$('#datetimepicker').datetimepicker({
+			language: 'zh-CN',  
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+		<div class="container" style="min-height: 560px;padding:0;margin:0;">
+    		<div class="row">
+				<include file="Public/backside" />
+				<div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+			<div class="main">
+            	<div class="main-h" >
+                	<ul class="breadcrumb">
+                  		<li>
+                    		<a href={:U('Back/index')}>订单管理首页</a> <span class="divider"></span>
+                  		</li>
+                      <li>
+                        <a href="#">已付款</a> <span class="divider"></span>
+                      </li>
+                       <li>
+                        <a href={:U('Back/subdelete')}>删除</a> <span class="divider"></span>
+                      </li>
+                  		<li class="active">
+                    		查询后的信息
+                  		</li>
+                	</ul>
+                  <h3 class="side-lined" style="color:#000">欢迎您！管理员</h3>
+                  <form class="form-horizontal" method="post" action={:U('Back/findfix')}>
+                  <div class="input-group">
+                    <input id="telphone" type="text" placeholder="请输入来客的电话号码" class="form-control" name="yourtel" />
+                    <span class="input-group-btn">
+                      <input class="btn btn-default" type="submit" value="查找">
+                   </span>
+                  </div>
+                  </form>
+                  <br>
+                         <table class="table table-hover" style="margin: 0px;">
+                      
+                       <thead>
+                          <tr>
+                             <th>ID</th>
+                             <th>电话号码</th>
+                             <th>预约人姓名</th>
+                             <th>预约时间</th>
+                             <th>成人人数</th>
+                             <th>儿童人数</th>
+                             <th>付款时间</th>
+                             <th>付款金额</th>
+                             <th>付款方式</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr>
+                             <td>{$findid}</td>
+                             <td>{$findtel}</td>
+                             <td>{$findname}</td>
+                             <td>{$findtime}</td>
+                             <td>{$findtotal}</td>
+                             <td>{$findchild}</td>
+                             <td>{$findpaytime}</td>
+                             <td>{$findmoney}</td>
+                             <td>{$findway}</td>
+                            <td>  <a onClick="return confirm('确认要删除该条用户信息？')" href={:U('Back/afterdel',array('id'=>$findtel))} title="删除信息"><span class="glyphicon glyphicon-trash" style=" float:right;"></span></a></td>
+                          </tr>
+                       </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+			</div>

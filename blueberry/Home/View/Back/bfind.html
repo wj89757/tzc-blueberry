@@ -1,0 +1,90 @@
+
+<div class="container" style="min-height: 500px;padding:0;margin:0;">
+    <div class="row">
+    <include file="Public/backside" />
+    <div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+       <div class="main">
+              <div class="main-h" >
+                  <ul class="breadcrumb">
+                      <li>
+                        <a href={:U('Back/index')}>订单管理首页</a> <span class="divider"></span>
+                      </li>
+                      <li>
+                        <a href={:U('Back/bfind')}>未付款</a> <span class="divider"></span>
+                      </li>
+                      <li class="active">
+                        手机预约登记
+                      </li>
+                  </ul>
+                  <form class="form-horizontal" method="post" action={:U('Back/twoalter')}>
+                  <h3 class="side-lined" style="color:#000">欢迎您！管理员</h3>
+                  <div class="input-group">
+                    <input id="telphone" type="text" placeholder="请输入来客的电话号码" class="form-control" name="yourtel" />
+                    <span class="input-group-btn">
+                      <input class="btn btn-default" type="submit" value="查找">
+                   </span>
+                  </div><br>
+
+                   
+                     <!--  <li class="list-group-item">
+                        <a href={:U('Back/alter',array('id'=>$obj['tel']))} style="color:#663333">
+                            【{$obj.tel}】{$obj.name} {$obj.aptime}
+                        <a href={:U('Back/alter',array('id'=>$obj['tel']))} title="修改信息"><span class="glyphicon glyphicon-pencil" style=" float:right;"></span></a>
+                        </a>
+                      </li> -->
+                      <table class="table table-hover" style="margin: 0px;">
+                       <caption>预约信息总览(指的是通过手机预约的)：总人数<{$sumtotal}>  成人总数<{$sumadult}>   儿童总数<{$sumchild}></caption>
+                       <thead>
+                          <tr>
+                             <th>ID</th>
+                             <th>电话号码</th>
+                             <th>预约姓名</th>
+                             <th>预约时间</th>
+                             <th>成人人数</th>
+                             <th>儿童人数</th>
+                             <th>预约提交时间</th>
+                             <th>信息操作</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                        <foreach item="obj" name="list">
+                          <tr>
+                             <td>{$obj.index}</td>
+                             <td>{$obj.tel}</td>
+                             <td>{$obj.name}</td>
+                             <td>{$obj.aptime}</td>
+                             <td>{$obj.totalnum}</td>
+                             <td>{$obj.childnum}</td>
+                             <td>{$obj.uptime}</td>
+                            <td> 
+                            
+                            <a href={:U('Back/alter',array('id'=>$obj['tel']))} title="修改信息" >登记下单</a>
+                            <a onClick="return confirm('确认要删除该条用户信息？')" href={:U('Back/afterdel',array('id'=>$obj['tel']))} title="删除信息" style=" float:right;  margin-right:10px;">删除</a>
+                            </td>
+                          </tr>
+                         </foreach> 
+                       </tbody>
+                    </table>
+                    
+                  <div class="pagination">
+                    {$page}
+                  </div>
+                <br><br><br><br><br><br>
+                  </form> 
+              </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script type="text/javascript">
+   var yes = document.getElementById('yes');
+        var fix = document.getElementById('fix');
+        var del = document.getElementById('del');
+        var no = document.getElementById('no');
+        var noadd = document.getElementById('noadd');
+        var nofind = document.getElementById('nofind');
+        var nodel = document.getElementById('delno');
+        var list = document.getElementById('list');fix.style.display = 'block';
+                del.style.display = 'block';
+                list.style.display = 'block';
+</script>

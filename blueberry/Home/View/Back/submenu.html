@@ -1,0 +1,55 @@
+
+		<div class="container" style="min-height: 560px;padding:0;margin:0;">
+    		<div class="row">
+				<div class="col-md-3 col-sm-4 col-lg-3 col-xs-4">
+				    <include file="Public/carte" />
+				</div>
+				<div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+			<div class="main">
+            	<div class="main-h" >
+                	<ul class="breadcrumb">
+                  		<li>
+                    		<a href={:U('Back/index')}>订单管理首页</a> <span class="divider"></span>
+                  		</li>
+                      <li>
+                        <a href={:U('Back/submenu')}>来客下单汇总</a> <span class="divider"></span>
+                      </li>
+                  		<li class="active">
+                    		主页
+                  		</li>
+                	</ul>
+                  <h3 class="side-lined" style="color:#000">欢迎您！管理员</h3>
+                  <div class="container-fluid">
+                    <div class="row-fluid">
+                      <div class="span12">
+                        <div class="media">
+                           <a href={:U('Back/subnew')} class="pull-left"><img src="__PUBLIC__/img/icon1.png" class="media-object" alt='' /></a>
+                          <div class="media-body">
+                            <h4 class="media-heading">
+                              新建
+                            </h4> 若顾客来店面前没有预约，请点击新建
+                          </div>
+                        </div>
+                        <div class="media">
+                           <a href={:U('Back/subalter')} class="pull-left"><img src="__PUBLIC__/img/icon2.png" class="media-object" alt='' /></a>
+                          <div class="media-body">
+                            <h4 class="media-heading">
+                              修改
+                            </h4> 若顾客需要修改信息，请点击修改
+                          </div>
+                        </div>                        <div class="media">
+                           <a href={:U('Back/subdelete')} class="pull-left"><img src="__PUBLIC__/img/icon4.png" class="media-object" alt='' /></a>
+                          <div class="media-body">
+                            <h4 class="media-heading">
+                              删除
+                            </h4> 如果需要删除顾客的订单信息，请点击删除
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+			</div>
+    </div>

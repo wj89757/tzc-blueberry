@@ -1,0 +1,59 @@
+<div class="col-md-3 col-sm-4 col-lg-3 col-xs-4">
+    <ul class="list-group">
+        <li class="list-group-item itemfix"><a href={:U('Back/index')}><span class="glyphicon glyphicon-home"></span>&nbsp;订单管理主页</a></li>
+        <li class="list-group-item itemfix" id="yes"><a href="#"><span class="glyphicon glyphicon-phone"></span>&nbsp;未付款</a></li>
+        <li class="list-group-item itemfix" id="fix" style="display: none;"><a href={:U('Back/subnew')} style="color:#B386B8"><span class="glyphicon glyphicon-phone"></span>&nbsp;实地登记信息</a></li>
+        <li class="list-group-item itemfix" id="del" style="display: none;"><a href={:U('Back/bfind')} style="color:#B386B8"><span class="glyphicon glyphicon-phone"></span>&nbsp;手机预约登记</a></li>
+        <li class="list-group-item itemfix" id="list" style="display: none;"><a href={:U('Back/nolist')} style="color:#B386B8"><span class="glyphicon glyphicon-phone"></span>&nbsp;顾客预约名单</a></li>
+        <li class="list-group-item itemfix" id="no"><a href={:U('Back/yeslist')}><span class="glyphicon glyphicon-align-center"></span>&nbsp;顾客付款名单</a></li>
+        <!-- 
+        <li class="list-group-item itemfix" id="nofind" style="display: none;"><a href={:U('Back/subalter')} style="color:#99cccc"><span class="glyphicon glyphicon-phone"></span>&nbsp;预约付款修改</a></li>
+       <li class="list-group-item itemfix" id="noadd" style="display: none;"><a href={:U('Back/yeslist')} style="color:#99cccc"><span class="glyphicon glyphicon-phone"></span>&nbsp;顾客付款名单</a></li> -->
+        
+    </ul>
+</div>
+<script type="text/javascript">
+    window.onload = function (){
+        var yes = document.getElementById('yes');
+        var fix = document.getElementById('fix');
+        var del = document.getElementById('del');
+        var no = document.getElementById('no');
+        var noadd = document.getElementById('noadd');
+        var nofind = document.getElementById('nofind');
+        var nodel = document.getElementById('delno');
+        var list = document.getElementById('list');
+
+
+        yes.onclick = function() {
+            if(fix.style.display == 'block')
+            {
+                fix.style.display = 'none';
+                del.style.display = 'none';
+                list.style.display = 'none';
+            }
+            else
+            {
+                fix.style.display = 'block';
+                del.style.display = 'block';
+                list.style.display = 'block';
+            }
+        };
+
+        no.onclick = function() {
+            if(noadd.style.display == 'block')
+            {
+                noadd.style.display = 'none';
+                nofind.style.display = 'none';
+                nodel.style.display = 'none';
+            }
+            else
+            {
+                noadd.style.display  = 'block';
+                nofind.style.display = 'block';
+                nodel.style.display  = 'block';
+            }
+        };
+
+
+    };
+</script>

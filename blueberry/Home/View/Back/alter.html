@@ -1,0 +1,98 @@
+
+<div class="container" style="min-height: 560px;padding:0;margin:0;">
+    <div class="row">
+		<include file="Public/backside" />
+		<div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+			 <div class="main">
+            	<div class="main-h" >
+                	<ul class="breadcrumb">
+                  		<li>
+                    		<a href={:U('Back/index')}>订单管理首页</a> <span class="divider"></span>
+                  		</li>
+                  		<li>
+                    		<a href={:U('Back/bfind')}>未付款</a> <span class="divider"></span>
+                  		</li>
+                  		<li>
+                    		<a href={:U('Back/bfind')}>查询顾客号码</a> <span class="divider"></span>
+                  		</li>
+                  		<li class="active">
+                    		增加支付信息或金额
+                  		</li>
+                	</ul>
+					<form class="form-horizontal" method="post" action={:U('Back/fix')}>
+					<div class="container">
+						<div class="row">
+							<div>
+								<h3>顾客登记下单</h3>
+							</div>
+							<input style="display:none;" value={$findid} name="id"/>
+							<div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-user">
+										</span>
+									</div>
+									<input type="text" id="username" placeholder="请输入您的姓名" class="form-control" name="yourname" msg="姓名" value="{$findname}" readonly>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-earphone">
+										</span>
+									</div>
+									<input id="telphone" type="text" placeholder="请输入您的联系方式" class="form-control" name="yourtel" msg="联系方式" value="{$findtel}" readonly/>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar">
+										</span>
+									</div>
+									<input id="datetimepicker" type="text" placeholder="请输入您的时间" class="form-control" name="youraptime" value="{$findtime}" readonly/>
+								</div>
+								<div class="input-group">
+							      <div class="input-group-addon">
+										<span class="glyphicon glyphicon-stats">
+										</span>
+									</div>
+									<input id="totalpeople" type="text" name="yourtotal" placeholder="请输入成人的人数（填数字即可）" class="form-control" msg="出行人数" value="{$findtotal}">
+							   </div>
+							   
+							</div>
+							<div class="col-md-5 col-sm-5 col-lg-5 col-xs-5" style="margin-bottom: 50px;">
+								<div class="input-group">
+							      <div class="input-group-addon">
+										<span class="glyphicon glyphicon-leaf">
+										</span>
+									</div>
+									<input id="childnum" type="text" name="yourchild" placeholder="请输入携带的8岁以下小孩人数（填数字即可）" class="form-control" value="{$findchild}" msg="儿童人数(可以是0)">
+							   </div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-yen">
+										</span>
+									</div>
+									<input id="paymoney" type="text" placeholder="请输入顾客所付的金额" class="form-control" name="yourpay" msg="金额" value=""/>
+								</div>
+
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-send">
+										</span>
+									</div>
+									<select class="form-control" name="yourway" id="select">
+										<option  value="支付宝支付">支付宝支付</option>
+								         <option value="微信支付">微信支付</option>
+								         <option value="现金支付">现金支付</option>
+									</select>
+								</div>
+							</div>
+
+						   <input type="submit" class="btn btn-primary btn-lg btn-block btn-top-px" value="下单" style="width: 20%;margin-left: 10px; " />
+						</div>
+					</div>
+				</form>	
+              </div>
+        </div>
+    </div>
+    </div>
+</div>
+

@@ -1,0 +1,104 @@
+
+		<div class="container" style="min-height: 560px;padding:0;margin:0;">
+    		<div class="row">
+
+        <include file="Public/backside" />
+				<div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+			<div class="main">
+            	<div class="main-h" >
+                	<ul class="breadcrumb">
+                  		<li>
+                    		<a href={:U('Back/index')}>订单管理首页</a> <span class="divider"></span>
+                  		</li>
+                      <li>
+                        <a href={:U('Back/submenu')}>已付款</a> <span class="divider"></span>
+                      </li>
+                      <li>
+                        <a href={:U('Back/subalter')}>修改</a> <span class="divider"></span>
+                      </li>
+                  		<li class="active">
+                    		修改用户信息
+                  		</li>
+                	</ul>
+                  <h3 class="side-lined" style="color:#000">欢迎您！管理员</h3>
+             		<form class="form-horizontal" method="post" action={:U('Back/subfix',array('id'=>$findtel))}>
+					<div class="container">
+						<div class="row">
+							<input style="display:none;" value={$findid} name="id"/>
+							<div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-user">
+										</span>
+									</div>
+									<input type="text" id="username" placeholder="请输入顾客的姓名" class="form-control" name="yourname" msg="姓名" value="预约人姓名【{$findname}】" readonly>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-earphone">
+										</span>
+									</div>
+									<input id="telphone" type="text" placeholder="请输入顾客的联系方式" class="form-control" name="yourtel" msg="联系方式" value="预约人电话【{$findtel}】"  readonly/>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-send">
+										</span>
+									</div>
+									<input id="paymoney" type="text" class="form-control" name="yourway" msg="方式" value="支付方式【{$findway}】"  readonly/>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar">
+										</span>
+									</div>
+									<input id="findpaytime" type="text"  class="form-control" name="yourpaytime" value="支付时间【{$findpaytime}】" readonly/>
+								</div>
+							</div>
+							<div class="col-md-5 col-sm-5 col-lg-5 col-xs-5" style="margin-bottom: 50px;">
+								<div class="input-group">
+							      <div class="input-group-addon">
+										<span class="glyphicon glyphicon-stats">
+										</span>
+									</div>
+									<input id="totalpeople" type="text" name="yourtotal" placeholder="成人人数【{$findtotal}】->点击修改" class="form-control" msg="出行人数">
+							   </div>
+								<div class="input-group">
+							      <div class="input-group-addon">
+										<span class="glyphicon glyphicon-leaf">
+										</span>
+									</div>
+									<input id="childnum" type="text" name="yourchild" placeholder="儿童人数【{$findchild}】->点击修改" class="form-control"  msg="儿童人数(可以是0)">
+							   </div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-yen">
+										</span>
+									</div>
+									<input id="paymoney" type="text" placeholder="所付金额【{$findmoney}】->请输入总共金额" class="form-control" name="yourpay" msg="金额" />
+								</div>
+								
+								
+								
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-send">
+										</span>
+									</div>
+									<select class="form-control" name="yourway">
+										<option value="支付宝支付">支付宝支付</option>
+								         <option value="微信支付">微信支付</option>
+								         <option value="现金支付">现金支付</option>
+									</select>
+								</div>
+							</div>
+
+						   <input type="submit" class="btn btn-primary btn-lg btn-block btn-top-px" value="修改" style="width: 20%;margin-left: 10px; " />
+						</div>
+					</div>
+				</form>	
+                  </div>
+                </div>
+            </div>
+        </div>
+			</div>

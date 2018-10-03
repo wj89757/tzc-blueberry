@@ -1,0 +1,114 @@
+<div class="container" style="min-height: 500px;padding:0;margin:0;">
+    <div class="row">
+		<include file="Public/backside" />
+		<div class="col-md-9 col-sm-8 col-lg-9 col-xs-8">
+			 <div class="main">
+            	<div class="main-h" >
+                	<ul class="breadcrumb">
+                  		<li>
+                    		<a href={:U('Back/bfind')}>订单管理首页</a> <span class="divider"></span>
+                  		</li>
+                  		<li>
+                    		<a href={:U('Back/bfind')}>顾客预约登记</a> <span class="divider"></span>
+                  		</li>
+                  		<li class="active">
+                    		修改信息
+                  		</li>
+                	</ul>
+                	<form class="form-horizontal" method="post" action={:U('Back/afterfix')}>
+					<div class="container">
+						<div class="row">
+							<div>
+								<h3>顾客登记修改信息</h3>
+							</div>
+							<input style="display:none;" value={$findid} name="id"/>
+							<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-user">
+										</span>
+									</div>
+									<input type="text" id="username" placeholder="请输入您的姓名" class="form-control" name="yourname" msg="姓名" value="{$findname}" readonly>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-earphone">
+										</span>
+									</div>
+									<input id="telphone" type="text" placeholder="请输入您的联系方式" class="form-control" name="yourtel" msg="联系方式" value="{$findtel}" readonly/>
+								</div>
+								
+								<div class="input-group">
+							      <div class="input-group-addon">
+										<span class="glyphicon glyphicon-stats">
+										</span>
+									</div>
+									<input id="totalpeople" type="text" name="yourtotal" placeholder="成人人数【{$findtotal}】->点击修改" class="form-control" msg="出行人数" value="">
+							   </div>
+							   
+							</div>
+							<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3" style="margin-bottom: 50px;">
+								<div class="input-group">
+							      <div class="input-group-addon">
+										<span class="glyphicon glyphicon-leaf">
+										</span>
+									</div>
+									<input id="childnum" type="text" name="yourchild" placeholder="儿童人数【{$findchild}】->点击修改" class="form-control" value="" msg="儿童人数(可以是0)">
+							   </div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-yen">
+										</span>
+									</div>
+									<input id="paymoney" type="text" placeholder="支付金额【{$findmoney}】->点击修改" class="form-control" name="yourpay" msg="金额" value=""/>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-send">
+										</span>
+									</div>
+									<select class="form-control" name="yourway" id="select">
+										<option  value="支付宝支付">支付宝支付</option>
+								         <option value="微信支付">微信支付</option>
+								         <option value="现金支付">现金支付</option>
+									</select>
+								</div>
+
+							</div>
+							<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3" style="margin-bottom: 50px;"> 
+							<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar">
+										</span>
+									</div>
+									<input type="text" placeholder="请输入您的时间" class="form-control" name="youraptime" value="预约时间【{$findtime}】" readonly/>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar">
+										</span>
+									</div>
+									<input id="findpaytime" type="text"  class="form-control" name="yourpaytime" value="付款时间【{$findpaytime}】" readonly/>
+								</div>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-send">
+										</span>
+									</div>
+									<input id="paymoney" type="text" placeholder="请输入顾客所付的金额" class="form-control" msg="金额" value="支付方式【{$findway}】" readonly/>
+								</div>
+								
+								
+
+							</div>
+							
+						</div>
+						<input type="submit" class="btn btn-default btn-lg btn-block btn-top-px" value="提交修改信息" style="width: 20%; " />
+					</div>
+              </div>
+          </form>
+        </div>
+    </div>
+    </div>
+</div>
+
